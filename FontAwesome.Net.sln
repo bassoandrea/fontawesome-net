@@ -3,9 +3,26 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
 VisualStudioVersion = 18.3.11512.155
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{90855AC4-B4B5-4A92-9736-C2E0133CCF12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FontAwesome.Net", "src\FontAwesome.Net\FontAwesome.Net.csproj", "{B5416048-9717-B47B-77CC-DBEC95BC67B3}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B5416048-9717-B47B-77CC-DBEC95BC67B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5416048-9717-B47B-77CC-DBEC95BC67B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5416048-9717-B47B-77CC-DBEC95BC67B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5416048-9717-B47B-77CC-DBEC95BC67B3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B5416048-9717-B47B-77CC-DBEC95BC67B3} = {90855AC4-B4B5-4A92-9736-C2E0133CCF12}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {98BF1F65-7D4E-4EB7-8948-F062CB98E2BC}
