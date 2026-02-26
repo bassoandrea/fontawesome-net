@@ -33,4 +33,10 @@
 		<ProjectReference Include="..\FontAwesome.Net\FontAwesome.Net.csproj" PrivateAssets="all" />
 	</ItemGroup>
 
+	<Target Name="AddAnalyzerToPackage" AfterTargets="Build">
+		<ItemGroup>
+			<None Include="$(OutputPath)$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+			<None Include="..\FontAwesome.Net\bin\$(Configuration)\netstandard2.0\FontAwesome.Net.dll" Pack="true" PackagePath="lib/netstandard2.0" Visible="false" />
+		</ItemGroup>
+	</Target>
 </Project>
