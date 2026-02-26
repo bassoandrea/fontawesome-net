@@ -6,6 +6,23 @@
 		<EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
 	</PropertyGroup>
 
+	<PropertyGroup>
+		<Version>1.0.0</Version>
+		<Authors>bassoandrea</Authors>
+		<Description>
+			FontAwesome.Net.Generators is a Roslyn-based source generator that produces strongly-typed C# icon and style classes from Font Awesome metadata. 
+			It parses Font Awesome icons.js metadata file to generate compile-time code for icon entries and styles, enabling easy usage of Font Awesome icons in .NET projects.
+		</Description>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<RepositoryUrl>https://github.com/bassoandrea/fontawesome-net</RepositoryUrl>
+		<Copyright>Copyright (c) 2026 bassoandrea</Copyright>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="$(SolutionDir)README.md" Pack="true" PackagePath="\" Visible="false" />
+	</ItemGroup>
+
 	<ItemGroup>
 		<PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.11.0" PrivateAssets="all" />
 		<PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.13.0" />
