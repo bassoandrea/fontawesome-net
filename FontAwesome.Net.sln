@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FontAwesome.Net", "src\Font
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FontAwesome.Net.Generators", "src\FontAwesome.Net.Generators\FontAwesome.Net.Generators.csproj", "{236EC6B3-F9D1-9FF5-BC0E-00F89AABDF20}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FontAwesome.Net.Wpf", "src\FontAwesome.Net.Wpf\FontAwesome.Net.Wpf.csproj", "{EBBE1D9D-69B6-1FE1-89C0-A532A4C1E145}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{236EC6B3-F9D1-9FF5-BC0E-00F89AABDF20}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{236EC6B3-F9D1-9FF5-BC0E-00F89AABDF20}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{236EC6B3-F9D1-9FF5-BC0E-00F89AABDF20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBBE1D9D-69B6-1FE1-89C0-A532A4C1E145}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBBE1D9D-69B6-1FE1-89C0-A532A4C1E145}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBBE1D9D-69B6-1FE1-89C0-A532A4C1E145}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBBE1D9D-69B6-1FE1-89C0-A532A4C1E145}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,6 +36,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{B5416048-9717-B47B-77CC-DBEC95BC67B3} = {90855AC4-B4B5-4A92-9736-C2E0133CCF12}
 		{236EC6B3-F9D1-9FF5-BC0E-00F89AABDF20} = {90855AC4-B4B5-4A92-9736-C2E0133CCF12}
+		{EBBE1D9D-69B6-1FE1-89C0-A532A4C1E145} = {90855AC4-B4B5-4A92-9736-C2E0133CCF12}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {98BF1F65-7D4E-4EB7-8948-F062CB98E2BC}
