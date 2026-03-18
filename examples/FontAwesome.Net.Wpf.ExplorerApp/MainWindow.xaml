@@ -1,0 +1,122 @@
+﻿<Window x:Class="FontAwesome.Net.Wpf.ExplorerApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FontAwesome.Net.Wpf.ExplorerApp"
+        xmlns:fa.g="clr-namespace:FontAwesome.Net.Generators"
+        xmlns:fa.net="clr-namespace:FontAwesome.Net;assembly=FontAwesome.Net"
+        xmlns:fa.wpf="clr-namespace:FontAwesome.Net.Wpf;assembly=FontAwesome.Net.Wpf"
+        xmlns:dptk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:converters="clr-namespace:FontAwesome.Net.Wpf.ExplorerApp.Converters"
+        mc:Ignorable="d"
+        DataContext="{x:Static local:MainWindowViewModel.Instance}"
+        Title="FontAwesome.NET Explorer" Height="450" Width="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <ListBox Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" ItemsSource="{Binding Icons}" SelectedItem="{Binding Icon}">
+            <ListBox.ItemTemplate>
+                <DataTemplate DataType="{x:Type fa.g:FontAwesomeIcon}">
+                    <Grid Margin="5" Width="100">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <fa.wpf:FontAwesomeImage Grid.Row="0" Icon="{Binding}" Width="25" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        <TextBlock Grid.Row="1" Text="{Binding}" MaxWidth="100" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel IsVirtualizing="True" VirtualizationMode="Recycling" Orientation="Vertical" />
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+        </ListBox>
+
+        <fa.wpf:FontAwesomeImage Grid.Row="0" Grid.Column="1" Icon="{Binding Icon}" 
+                                  Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                                  IconStyle="{Binding IconStyle}" 
+                                  Rotation="{Binding Rotation}"
+                                  FlipOrientation="{Binding FlipOrientation}"
+                                  Spin="{Binding Spin}" SpinDuration="{Binding SpinDuration}" ReverseSpinDirection="{Binding ReverseSpinDirection}"
+                                  Foreground="{Binding IconColor, Converter={converters:ColorToSolidBrushConverter}}" />
+
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <dptk:ColorPicker Grid.Row="0" Width="75" SelectedColor="{Binding IconColor}" HorizontalAlignment="Right" Margin="5" />
+
+            <Slider Grid.Row="0" Value="{Binding Rotation}" 
+                        Minimum="-180" Maximum="+180" 
+                        AutoToolTipPlacement="TopLeft" AutoToolTipPrecision="2" 
+                        TickFrequency="45" TickPlacement="BottomRight" IsMoveToPointEnabled="True"
+                        HorizontalAlignment="Left" Width="250" Margin="5" />
+
+            <GroupBox Grid.Row="1" Header="Style" BorderThickness="0.5" BorderBrush="Black" Margin="5">
+                <StackPanel Orientation="Horizontal">
+                    <RadioButton IsChecked="{Binding IconStyle, Converter={converters:ComparisonConverter}, ConverterParameter={x:Static fa.g:FontAwesomeIconStyle.Solid }}" 
+                                     Content="{x:Static fa.g:FontAwesomeIconStyle.Solid}"
+                                     GroupName="IconStyles"
+                                     Margin=" 5"
+                                     Visibility="{Binding IconStyles, Converter={converters:IsInCollectionToVisibilityConverter}, ConverterParameter={x:Static fa.g:FontAwesomeIconStyle.Solid}}" />
+
+                    <RadioButton IsChecked="{Binding IconStyle, Converter={converters:ComparisonConverter}, ConverterParameter={x:Static fa.g:FontAwesomeIconStyle.Regular }}" 
+                                     Content="{x:Static fa.g:FontAwesomeIconStyle.Regular}"
+                                     GroupName="IconStyles" 
+                                     Margin=" 5"
+                                     Visibility="{Binding IconStyles, Converter={converters:IsInCollectionToVisibilityConverter}, ConverterParameter={x:Static fa.g:FontAwesomeIconStyle.Regular}}" />
+
+
+                    <RadioButton IsChecked="{Binding IconStyle, Converter={converters:ComparisonConverter}, ConverterParameter={x:Static fa.g:FontAwesomeIconStyle.Brands }}" 
+                                     Content="{x:Static fa.g:FontAwesomeIconStyle.Brands}"
+                                     GroupName="IconStyles" 
+                                     Margin=" 5"
+                                     Visibility="{Binding IconStyles, Converter={converters:IsInCollectionToVisibilityConverter}, ConverterParameter={x:Static fa.g:FontAwesomeIconStyle.Brands}}" />
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox Grid.Row="2" Header="Flip" BorderThickness="0.5" BorderBrush="Black" Margin="5">
+                <StackPanel Orientation="Horizontal">
+                    <RadioButton IsChecked="{Binding FlipOrientation, Converter={converters:ComparisonConverter}, ConverterParameter={x:Static fa.net:FlipOrientation.None}}" 
+                                     Content="{x:Static fa.net:FlipOrientation.None}"
+                                     GroupName="FlipOrientations" 
+                                     Margin=" 5" />
+
+                    <RadioButton IsChecked="{Binding FlipOrientation, Converter={converters:ComparisonConverter}, ConverterParameter={x:Static fa.net:FlipOrientation.Vertical }}" 
+                                     Content="{x:Static fa.net:FlipOrientation.Vertical}"
+                                     GroupName="FlipOrientations" 
+                                     Margin=" 5" />
+
+                    <RadioButton IsChecked="{Binding FlipOrientation, Converter={converters:ComparisonConverter}, ConverterParameter={x:Static fa.net:FlipOrientation.Horizontal }}" 
+                                     Content="{x:Static fa.net:FlipOrientation.Horizontal}"
+                                     GroupName="FlipOrientations" 
+                                     Margin=" 5" />
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox Grid.Row="3" Header="Spin" BorderThickness="0.5" BorderBrush="Black" Margin="5">
+                <StackPanel Orientation="Horizontal">
+                    <CheckBox IsChecked="{Binding Spin}" Content="Enable spin" VerticalAlignment="Center" Margin="5" />
+                    <CheckBox IsChecked="{Binding ReverseSpinDirection}" Content="Reverse spin direction" VerticalAlignment="Center" Margin="5" />
+                    <dptk:DoubleUpDown Value="{Binding SpinDuration}" Height="20" Width="55" VerticalAlignment="Center" Margin="5" />
+                </StackPanel>
+            </GroupBox>
+        </Grid>
+    </Grid>
+</Window>

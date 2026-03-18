@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="..\resources\fontawesome-free-7.2.0-desktop\otfs\Font Awesome 7 Brands-Regular-400.otf" Link="Resources\Font Awesome 7 Brands-Regular-400.otf" />
+    <Resource Include="..\resources\fontawesome-free-7.2.0-desktop\otfs\Font Awesome 7 Free-Regular-400.otf" Link="Resources\Font Awesome 7 Free-Regular-400.otf" />
+    <Resource Include="..\resources\fontawesome-free-7.2.0-desktop\otfs\Font Awesome 7 Free-Solid-900.otf" Link="Resources\Font Awesome 7 Free-Solid-900.otf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="..\resources\fontawesome-free-7.2.0-desktop\metadata\icons.json" Link="Resources\icons.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+    <PackageReference Include="DotNetProjects.Extended.Wpf.Toolkit" Version="5.0.129" />
+    <PackageReference Include="FontAwesome.Net.Wpf" Version="1.0.0" />
+  </ItemGroup>
+
+</Project>
