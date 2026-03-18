@@ -9,10 +9,7 @@
 	<PropertyGroup>
 		<Version>1.0.0</Version>
 		<Authors>bassoandrea</Authors>
-		<Description>
-			FontAwesome.Net.Generators is a Roslyn-based source generator that produces strongly-typed C# icon and style classes from Font Awesome metadata. 
-			It parses Font Awesome icons.js metadata file to generate compile-time code for icon entries and styles, enabling easy usage of Font Awesome icons in .NET projects.
-		</Description>
+		<Description>A Roslyn source generator that creates strongly-typed C# icon classes (FontAwesomeIcon) and style classes (FontAwesomeIconStyle) from Font Awesome icons.json metadata. Enables compile-time icon generation with IntelliSense support, type safety, and seamless integration with WPF controls.</Description>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<RepositoryUrl>https://github.com/bassoandrea/fontawesome-net</RepositoryUrl>

@@ -8,10 +8,7 @@
 	<PropertyGroup>
 		<Version>1.0.0</Version>
 		<Authors>bassoandrea</Authors>
-		<Description>
-			FontAwesome.Net.Wpf provides WPF controls and helpers for using Font Awesome icons in .NET applications. 
-			Includes a `FontAwesomeImage` control, supports generated icon enums, data binding, and scalable vector rendering for easy integration with .NET Framework and .NET 5 WPF projects.
-		</Description>
+		<Description>WPF controls for Font Awesome icons with built-in spin animations, rotation, and flip support. Includes FontAwesomeImage (vector-based) and FontAwesomeBlock (text-based) controls with MVVM-friendly dependency properties for data binding. Supports .NET Framework 4.8+ and .NET 5+.</Description>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<RepositoryUrl>https://github.com/bassoandrea/fontawesome-net</RepositoryUrl>
